@@ -14,10 +14,9 @@ function App() {
 
   const handleClick = () => {
    if (email !== '' && email.includes('@gmail.com') && email.length >= 7) {
-     return setIsValid(true)
+      setIsValid(true)
    } 
-   
-    
+    return setEmail('')
   }
 
 
@@ -47,7 +46,8 @@ function App() {
               <input type="text"
                 placeholder='Enter your email address'
                 className='p-2 px-4 text-center text-white bg-zinc-800 border border-zinc-600 placeholder:text-sm placeholder:text-center md:text-left placeholder:md:text-left focus:outline-none rounded-xl'
-                onChange={handleOnchange} />
+                onChange={handleOnchange}
+                value={email}/>
               <button
                 className="px-5 py-3 text-sm rounded-md text-zinc-800 bg-lime-500 hover:bg-lime-700 
                 hover:text-white duration-500" onClick={handleClick}>
